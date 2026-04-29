@@ -1,0 +1,35 @@
+1) Зима
+2) Равнины
+3) Океан
+4) Пещера
+5) Ад
+6) частилище/подземный храм
+шрифт 
+https://www.dafont.com/digital-disco.font
+
+водный 
+https://free-game-assets.itch.io/seabed-pixel-art-top-down-tileset 0,70$
+
+голем 
+https://free-game-assets.itch.io/golem-pixel-art-top-down-sprite-pack 0,70$
+
+слаймик 
+https://free-game-assets.itch.io/top-down-pixel-art-slime-monsters-sprite-pack 0,70$
+https://free-game-assets.itch.io/pixel-art-slime-enemies-top-down-sprite-pack 0,70$
+
+гоблин 
+https://free-game-assets.itch.io/goblin-pixel-art-character-sprite-pack 0,70$
+рай 
+https://free-game-assets.itch.io/flying-islands-pixel-art-top-down-tileset 0,70$
+
+спрайты атак(магия) 
+https://free-game-assets.itch.io/magic-effects-pixel-art 0,60$
+https://free-game-assets.itch.io/fire-magic-effects-pixel-art 0,60$
+https://free-game-assets.itch.io/water-effects-pixel-art-set 0,60$
+https://free-game-assets.itch.io/smoke-effects-pixel-art 0,60$
+
+скелетик босс
+https://free-game-assets.itch.io/the-top-down-undead-land-objects-pixel-art 0,70$
+
+стайлсет кримсон
+https://free-game-assets.itch.io/cursed-land-objects-pixel-art-for-rpg-game 0,70$
