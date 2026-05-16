@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1152475579314839684}
   - component: {fileID: 5934630096260298897}
+  - component: {fileID: 1746289745013265018}
   m_Layer: 0
   m_Name: SlimeVisual
   m_TagString: Untagged
@@ -81,16 +82,38 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7294240746080377788, guid: 5d3f3ecfaecc3f0479602c30458c8b86, type: 3}
+  m_Sprite: {fileID: -2934438944226731720, guid: 0180ea7516fd7ef4fa63f6075713df9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.65625, y: 0.75}
+  m_Size: {x: 0.59375, y: 0.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 1
+--- !u!95 &1746289745013265018
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883809789268947418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08d7f9bc1ff789a4eb8505d922bd4cbc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8126854902195076383
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +126,7 @@ GameObject:
   - component: {fileID: 3929291691470775411}
   - component: {fileID: 8917999141644368242}
   - component: {fileID: 5463065327279763469}
+  - component: {fileID: 7825798331296090757}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -151,7 +175,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &8917999141644368242
 CapsuleCollider2D:
@@ -212,3 +236,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7825798331296090757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126854902195076383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d7441febcf23e47b689f2d6c0c0d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  startingState: 1
+  roamingDistanceMax: 5
+  roamingDistanceMin: 2
+  roamingTimerMax: 3
