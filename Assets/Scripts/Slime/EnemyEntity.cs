@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyEntity : MonoBehaviour
 {
    [Header("Здоровье сущности")]
    [SerializeField] private int maxHealth = 5;

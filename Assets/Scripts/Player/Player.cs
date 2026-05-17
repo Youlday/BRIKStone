@@ -1,14 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[SelectionBase]
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
+    
     [Header("Настройки скорости персонажа")]
     [SerializeField] private float movingSpeed = 5f;
     [SerializeField] private float runningSpeed = 8f;
     
     [Header("Настройки атаки")]
     [SerializeField] private float attackCooldown = 0.5f;
+    [SerializeField] private Sword equippedSword;
 
     private Rigidbody2D _rb;
     private Animator _animator;
@@ -88,5 +92,14 @@ public class Player : MonoBehaviour
     {
         float currentSpeed = IsShiftPressed() ? runningSpeed : movingSpeed;
         _rb.linearVelocity = _movement.normalized * currentSpeed;
+    }
+
+    public void OnAttackStart()
+    {
+        if(equippedSword != null) equippedSword.AttackColliderTurnOn();
+    }
+    public void OnAttackEnd()
+    {
+        if(equippedSword != null) equippedSword.AttackColliderTurnOff();
     }
 }
