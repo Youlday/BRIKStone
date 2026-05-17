@@ -12,10 +12,10 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D _rb;
     private Animator _animator;
+    private AudioSource _audioSource;
     private Vector2 _movement;
     private float _lastAttackTime;
     
-    // Хэшированные вызовы
     private static readonly int AttackKey = Animator.StringToHash("Attack");
     private static readonly int HorizontalKey = Animator.StringToHash("Horizontal");
     private static readonly int VerticalKey = Animator.StringToHash("Vertical");
@@ -46,10 +46,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void PlaySwingSound()
+    {
+        if (_audioSource)
+        {
+            _audioSource.Play();
+        }
+    }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
