@@ -6421,7 +6421,10 @@ MonoBehaviour:
   movingSpeed: 3
   runningSpeed: 5
   attackCooldown: 0.1
-  equippedSword: {fileID: 0}
+  stepSounds:
+  - {fileID: 8300000, guid: 4c58cc726e629ab8c87078c521ebb9e4, type: 3}
+  - {fileID: 8300000, guid: 0a0fa3d07f9766fc0babfbbab7ae7483, type: 3}
+  - {fileID: 8300000, guid: 322a222e156d77e15918f4845deac5f4, type: 3}
 --- !u!50 &729951146
 Rigidbody2D:
   serializedVersion: 5

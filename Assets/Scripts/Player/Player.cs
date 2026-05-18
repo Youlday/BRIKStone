@@ -1,18 +1,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[SelectionBase]
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
-    
+
     [Header("Настройки скорости персонажа")]
-    [SerializeField] private float movingSpeed = 5f;
-    [SerializeField] private float runningSpeed = 8f;
+    [SerializeField] private float movingSpeed = 3f;
+    [SerializeField] private float runningSpeed = 5f;
     
     [Header("Настройки атаки")]
-    [SerializeField] private float attackCooldown = 0.5f;
-    [SerializeField] private Sword equippedSword;
+    [SerializeField] private float attackCooldown = 0.1f;
+    [SerializeField] private MonoBehaviour equippedSword;
+
+    [Header("Звуки шагов")]
+    [SerializeField] private AudioClip[] stepSounds; 
 
     private Rigidbody2D _rb;
     private Animator _animator;
@@ -25,7 +27,6 @@ public class Player : MonoBehaviour
     private static readonly int VerticalKey = Animator.StringToHash("Vertical");
     private static readonly int SpeedKey = Animator.StringToHash("Speed");
     private static readonly int IsRunningKey = Animator.StringToHash("IsRunning");
-
 
     private bool IsShiftPressed()
     {
@@ -58,8 +59,44 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void PlayStepSound()
+    {
+        if (_audioSource && stepSounds != null && stepSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, stepSounds.Length);
+            _audioSource.pitch = Random.Range(0.85f, 1.15f);
+            _audioSource.PlayOneShot(stepSounds[randomIndex]);
+        }
+    }
+
+    public void OnAttackStart()
+    {
+        if (equippedSword != null)
+        {
+            equippedSword.SendMessage("AttackColliderTurnOn", SendMessageOptions.DontRequireReceiver);
+        }
+    }
+
+    public void OnAttackEnd()
+    {
+        if (equippedSword != null)
+        {
+            equippedSword.SendMessage("AttackColliderTurnOff", SendMessageOptions.DontRequireReceiver);
+        }
+    }
+
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
@@ -85,21 +122,11 @@ public class Player : MonoBehaviour
         {
             AttemptAttack();
         }
-        
     }
 
     private void FixedUpdate()
     {
         float currentSpeed = IsShiftPressed() ? runningSpeed : movingSpeed;
         _rb.linearVelocity = _movement.normalized * currentSpeed;
-    }
-
-    public void OnAttackStart()
-    {
-        if(equippedSword != null) equippedSword.AttackColliderTurnOn();
-    }
-    public void OnAttackEnd()
-    {
-        if(equippedSword != null) equippedSword.AttackColliderTurnOff();
     }
 }
