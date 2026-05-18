@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1152475579314839684}
   - component: {fileID: 5934630096260298897}
   - component: {fileID: 1746289745013265018}
+  - component: {fileID: 7782874358482473555}
   m_Layer: 0
   m_Name: SlimeVisual
   m_TagString: Untagged
@@ -114,6 +115,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7782874358482473555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883809789268947418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48113a2466334424cb169700d48ed92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlimeVisual
+  enemyAI: {fileID: 7825798331296090757}
 --- !u!1 &8126854902195076383
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +141,7 @@ GameObject:
   - component: {fileID: 8917999141644368242}
   - component: {fileID: 5463065327279763469}
   - component: {fileID: 7825798331296090757}
+  - component: {fileID: 8826087390421312325}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -224,7 +239,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.28
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -252,3 +267,18 @@ MonoBehaviour:
   roamingDistanceMax: 5
   roamingDistanceMin: 2
   roamingTimerMax: 3
+  isAttackingEnemy: 0
+  isChasingEnemy: 1
+--- !u!114 &8826087390421312325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126854902195076383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281f05d3000d0034180e3326643c4092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyEntity
+  maxHealth: 15

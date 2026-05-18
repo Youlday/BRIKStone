@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float runningSpeed = 5f;
     
     [Header("Настройки атаки")]
-    [SerializeField] private float attackCooldown = 0.1f;
+    [SerializeField] private float attackCooldown = 0.5f;
     [SerializeField] private MonoBehaviour equippedSword;
 
     [Header("Звуки шагов")]

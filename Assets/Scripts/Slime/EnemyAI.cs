@@ -17,18 +17,20 @@ public class EnemyAI : MonoBehaviour
 
     private float _attackingDistance = 2f;
 
+    
     private float _attackRate = 2f;
     private float _nextAttackTime = 0f;
-    
-    
+
+
     // Враг преследует гг или нет 
-    [SerializeField] private bool isChasingEnemy = false;
+    [Header("Преследование игрока")] [SerializeField]
+    private bool isChasingEnemy = false;
+
     private float _chasingDistance = 4f;
-    private float _chasingMultiplayer = 2f;
+    private float _chasingMultiplier = 2f;
 
     // Переменные
     private NavMeshAgent _navMeshAgent;
-    private Animator _animator;
     private State _state;
     private float _roamingTimer;
     private Vector3 _roamPosition;
@@ -39,13 +41,11 @@ public class EnemyAI : MonoBehaviour
 
     public event EventHandler OnEnemyAttack;
 
+    // Связь со SlimeVisual(Любой Visual частью врагов)
+    public State CurrentState => _state;
+    public Vector3 MovementVelocity => _navMeshAgent != null ? _navMeshAgent.desiredVelocity : Vector3.zero;
 
-    // Хэширование для оптимизации
-    private static readonly int HorizontalKey = Animator.StringToHash("Horizontal");
-    private static readonly int VerticalKey = Animator.StringToHash("Vertical");
-    private static readonly int IsRoamingKey = Animator.StringToHash("IsRoaming");
-
-    private enum State
+    public enum State
     {
         idle,
         Roaming,
@@ -59,12 +59,11 @@ public class EnemyAI : MonoBehaviour
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.updateRotation = false;
-        _animator = GetComponentInChildren<Animator>();
         _navMeshAgent.updateUpAxis = false;
         _state = startingState;
 
         _roamingSpeed = _navMeshAgent.speed;
-        _chasingSpeed = _navMeshAgent.speed * _chasingMultiplayer;
+        _chasingSpeed = _navMeshAgent.speed * _chasingMultiplier;
         _startingPosition = transform.position;
     }
 
@@ -80,6 +79,7 @@ public class EnemyAI : MonoBehaviour
         switch (_state)
         {
             case State.Roaming:
+                CheckCurrentState();
                 if (!_navMeshAgent.pathPending && _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
                 {
                     _state = State.idle;
@@ -103,6 +103,7 @@ public class EnemyAI : MonoBehaviour
 
             default:
             case State.idle:
+                CheckCurrentState();
                 _roamingTimer -= Time.deltaTime;
                 if (_roamingTimer <= 0)
                 {
@@ -112,8 +113,6 @@ public class EnemyAI : MonoBehaviour
 
                 break;
         }
-
-        UpdateEnemyAnimations();
     }
 
 
@@ -176,20 +175,9 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-
-    // Логика направления движения
-    private void UpdateEnemyAnimations()
+    public float GetRoamingAnimationSpeed()
     {
-        Vector3 moveDirection = _navMeshAgent.desiredVelocity;
-
-        if (moveDirection.sqrMagnitude > 0.01f)
-        {
-            moveDirection.Normalize();
-            _animator.SetFloat(HorizontalKey, moveDirection.x);
-            _animator.SetFloat(VerticalKey, moveDirection.y);
-        }
-
-        _animator.SetBool(IsRoamingKey, _state == State.Roaming);
+        return _navMeshAgent.speed / _roamingSpeed;
     }
 
     private void StartRoaming()
