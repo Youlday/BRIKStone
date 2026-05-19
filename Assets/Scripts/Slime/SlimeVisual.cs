@@ -14,22 +14,55 @@ public class SlimeVisual : MonoBehaviour
     private static readonly int VerticalKey = Animator.StringToHash("Vertical");
     private static readonly int IsRoamingKey = Animator.StringToHash("IsRoaming");
     private static readonly int AnimSpeedKey = Animator.StringToHash("AnimSpeed");
+    private static readonly int AttackKey = Animator.StringToHash("Attack");
+    private static readonly int HitKey = Animator.StringToHash("TakeHit");
+    private static readonly int DeathKey =  Animator.StringToHash("IsDead");
+    
+    SpriteRenderer _spriteRenderer;
 
     // "Пробуждение объектов"
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         if (enemyAI == null)
         {
             enemyAI = GetComponentInParent<EnemyAI>();
         }
     }
 
+
+    private void Start()
+    {
+        enemyAI.OnEnemyAttack += _enemyAI_onEnemyAttack;
+        enemyEntity.OntakeHit += _enemyEntity_OnTakeHit;
+        enemyEntity.OnDeath += _enemyEntity_OnDeath;
+    }
+
+    private void OnDestroy()
+    {
+        if (enemyEntity != null)
+        {
+            enemyEntity.OntakeHit -= _enemyEntity_OnTakeHit;
+        }
+    }
+
+    private void _enemyEntity_OnTakeHit(object sender, System.EventArgs e)
+    {
+        _animator.SetTrigger(HitKey);
+    }
+
+    private void _enemyEntity_OnDeath(object sender, System.EventArgs e)
+    {
+        _animator.SetBool(DeathKey, true);
+        _spriteRenderer.sortingOrder = -1;
+    }
+
+
     private void Update()
     {
         if (enemyAI == null) return;
-
+        
         UpdateEnemyAnimations();
     }
 
@@ -46,7 +79,7 @@ public class SlimeVisual : MonoBehaviour
 
         _animator.SetBool(IsRoamingKey, enemyAI.CurrentState == EnemyAI.State.Roaming);
 
-        // Ускоряемся при погоне
+        // Ускорение анимации при преследовании игрока
         _animator.SetFloat(AnimSpeedKey, enemyAI.GetRoamingAnimationSpeed());
     }
 
@@ -54,9 +87,14 @@ public class SlimeVisual : MonoBehaviour
     {
         enemyEntity.PolygonColliderTurnOff();
     }
-    
+
     public void TriggerAttackAnimationTurnOn()
     {
         enemyEntity.PolygonColliderTurnOn();
+    }
+
+    private void _enemyAI_onEnemyAttack(object sender, System.EventArgs e)
+    {
+        _animator.SetTrigger(AttackKey);
     }
 }
