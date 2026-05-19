@@ -1,0 +1,316 @@
+fileFormatVersion: 2
+guid: 974944b49caf61b4c8bd6eff86b1629b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1328215015385051895
+    second: healt_left-finish_0
+  - first:
+      213: -68462999997124974
+    second: healt_left-finish_1
+  - first:
+      213: 5142595336738711678
+    second: healt_left-finish_2
+  - first:
+      213: -8144573356450063274
+    second: healt_left-finish_3
+  - first:
+      213: -6779997494996995472
+    second: healt_left-finish_4
+  - first:
+      213: 7719457030508149253
+    second: healt_left-finish_5
+  - first:
+      213: 827291802679918425
+    second: healt_left-finish_6
+  - first:
+      213: -440776938464958559
+    second: healt_left-finish_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: healt_left-finish_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 20
+        width: 19
+        height: 38
+      alignment: 9
+      pivot: {x: 0.43340865, y: 0.14801367}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2bd51f484ce6210800000000000000
+      internalID: 1328215015385051895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: healt_left-finish_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 20
+        width: 19
+        height: 38
+      alignment: 9
+      pivot: {x: 0.49048734, y: 0.13374394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29ee9e4a345cc0ff0800000000000000
+      internalID: -68462999997124974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: healt_left-finish_2
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 20
+        width: 19
+        height: 38
+      alignment: 9
+      pivot: {x: 0.4619486, y: 0.10520453}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7824ed463b2e5740800000000000000
+      internalID: 5142595336738711678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: healt_left-finish_3
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 20
+        width: 20
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5180756, y: 0.10142385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65cdea12fa9a8fe80800000000000000
+      internalID: -8144573356450063274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: healt_left-finish_5
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 20
+        width: 22
+        height: 39
+      alignment: 9
+      pivot: {x: 0.47288817, y: 0.110693075}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a74521545012b60800000000000000
+      internalID: 7719457030508149253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: healt_left-finish_6
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 20
+        width: 23
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13693966}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f3458e2812b7b00800000000000000
+      internalID: 827291802679918425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: healt_left-finish_7
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 20
+        width: 22
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5247553, y: 0.08108418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7ac95b5bb02e9f0800000000000000
+      internalID: -440776938464958559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4f35172897ce4b74d95a5111dabe6bc6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      healt_left-finish_0: 1328215015385051895
+      healt_left-finish_1: -68462999997124974
+      healt_left-finish_2: 5142595336738711678
+      healt_left-finish_3: -8144573356450063274
+      healt_left-finish_4: -6779997494996995472
+      healt_left-finish_5: 7719457030508149253
+      healt_left-finish_6: 827291802679918425
+      healt_left-finish_7: -440776938464958559
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

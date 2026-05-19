@@ -3,8 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Sword : MonoBehaviour
 {
-    [Header("Настройки оружия")] [SerializeField]
-    private int damage = 5;
+    [Header("Настройки оружия")] 
+    [SerializeField] private int damage = 5;
 
     private CapsuleCollider2D _swordCollider;
 
@@ -20,9 +20,12 @@ public class Sword : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.TryGetComponent(out EnemyEntity enemyEntity))
+        if (collision is CapsuleCollider2D)
         {
-            enemyEntity.TakeDamage(damage);
+            if (collision.TryGetComponent(out EnemyEntity enemyEntity))
+            {
+                enemyEntity.TakeDamage(damage);
+            }
         }
     }
 

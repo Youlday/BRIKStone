@@ -8,18 +8,22 @@ public class EnemyAI : MonoBehaviour
 {
     // Переменные которые можно изменять в меню изменения объекта Unity
     [SerializeField] private State startingState;
+    [Header("Максимальная дистанция патрулирования")] 
     [SerializeField] private float roamingDistanceMax;
+    [Header("Минимальная  дистанция патрулирования")] 
     [SerializeField] private float roamingDistanceMin;
+    [Header("Отдых после патрулирования")] 
     [SerializeField] private float roamingTimerMax;
 
     [Header("Атакующий энтити или нет")] [SerializeField]
     private bool isAttackingEnemy = false;
-
-    private float _attackingDistance = 2f;
-
     
+    [Header("Дистанция атаки")] [SerializeField]
+    private float _attackingDistance = 1f;
+
+    [Header("Скорость Атаки")] [SerializeField]
     private float _attackRate = 2f;
-    private float _nextAttackTime = 0f;
+    private float _nextAttackTime = 0.5f;
 
 
     // Враг преследует гг или нет 
@@ -73,6 +77,11 @@ public class EnemyAI : MonoBehaviour
         StateHandler();
     }
 
+    public void SetDeathState()
+    {
+        _navMeshAgent.ResetPath();
+        _state = State.Death;
+    }
 
     private void StateHandler()
     {
