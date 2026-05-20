@@ -384030,6 +384030,10 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 --- !u!1 &1702017007
 GameObject:
   m_ObjectHideFlags: 0
@@ -384168,6 +384172,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8126854902195076383, guid: 64934515fdb46354ab0f0107fc4cfb70, type: 3}
   m_PrefabInstance: {fileID: 8514191797412567135}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 --- !u!1001 &1753067758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -384259,6 +384268,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8612487602809331095, guid: 64934515fdb46354ab0f0107fc4cfb70, type: 3}
   m_PrefabInstance: {fileID: 8514191797412567135}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 --- !u!60 &1845665000
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -384340,6 +384353,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281f05d3000d0034180e3326643c4092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyEntity
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 --- !u!1 &1878909859
 GameObject:
   m_ObjectHideFlags: 0
@@ -737206,6 +737224,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 543944539}
     m_Modifications:
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     - target: {fileID: 5934630096260298897, guid: 64934515fdb46354ab0f0107fc4cfb70, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -737226,6 +737248,11 @@ PrefabInstance:
       propertyPath: roamingDistanceMin
       value: 3
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
     - target: {fileID: 8126854902195076383, guid: 64934515fdb46354ab0f0107fc4cfb70, type: 3}
       propertyPath: m_Name
       value: Slime

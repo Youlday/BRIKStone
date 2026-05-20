@@ -7,12 +7,18 @@ using UnityEngine;
 
 public class EnemyEntity : MonoBehaviour
 {
+<<<<<<< Updated upstream
 
     
     public event EventHandler OntakeHit;
     public event EventHandler OnDeath;
     [Header("Здоровье сущности")] [SerializeField]
     private int maxHealth = 5;
+=======
+    [SerializeField] private EnemySO _enemySO;
+    public event EventHandler OntakeHit;
+    public event EventHandler OnDeath;
+>>>>>>> Stashed changes
 
     private int _currentHealth;
 
@@ -36,6 +42,11 @@ public class EnemyEntity : MonoBehaviour
     // Получение урона 
     public void TakeDamage(int damage)
     {
+<<<<<<< Updated upstream
+=======
+        if (_currentHealth <= 0) return; 
+
+>>>>>>> Stashed changes
         _currentHealth -= damage;
         OntakeHit?.Invoke(this, EventArgs.Empty);
         DetectDeath();
@@ -55,6 +66,7 @@ public class EnemyEntity : MonoBehaviour
     {
         if (_currentHealth <= 0)
         {
+<<<<<<< Updated upstream
             OnDeath?.Invoke(this, EventArgs.Empty);
         }
     }
@@ -66,4 +78,21 @@ public class EnemyEntity : MonoBehaviour
         _enemyAI.SetDeathState();
        // Debug.Log("Attack");
     }
+=======
+            _capsuleCollider.enabled = false;
+            _polygonCollider.enabled = false;
+            _enemyAI.SetDeathState();
+            OnDeath?.Invoke(this, EventArgs.Empty);
+        }
+    }
+    
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.transform.TryGetComponent(out Player player))
+        {
+            player.TakeDamage(transform, _enemySO.enemyDamageAmount);
+        }
+    }
+
+>>>>>>> Stashed changes
 }
