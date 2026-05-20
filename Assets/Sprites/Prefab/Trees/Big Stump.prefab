@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2146942555949466859}
   - component: {fileID: 8972036620488533294}
   - component: {fileID: 8847776938616157009}
+  - component: {fileID: 3914491641061565769}
   m_Layer: 0
   m_Name: Big Stump
   m_TagString: Untagged
@@ -129,3 +130,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0.004063368, y: 0.5608796}
   m_Size: {x: 1.477418, y: 1.477418}
   m_Direction: 0
+--- !u!114 &3914491641061565769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70254292183427394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0352a4d56abd42ad2fc69deb72448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifierVolume
+  m_Size: {x: 1.4744971, y: 1.405628, z: 4}
+  m_Center: {x: 0.0072470903, y: 0.5921308, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff

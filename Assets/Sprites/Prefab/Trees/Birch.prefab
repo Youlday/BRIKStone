@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8796536696332220439}
   - component: {fileID: 704238432255987561}
   - component: {fileID: 1234828143434591956}
+  - component: {fileID: -2077266504202854439}
   m_Layer: 0
   m_Name: Birch
   m_TagString: Untagged
@@ -138,3 +139,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.35014534, y: 0.54884946}
   m_EdgeRadius: 0
+--- !u!114 &-2077266504202854439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30658754805265301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0352a4d56abd42ad2fc69deb72448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifierVolume
+  m_Size: {x: 0.3854046, y: 0.6025467, z: 4}
+  m_Center: {x: -0.045715332, y: 0.2617222, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff

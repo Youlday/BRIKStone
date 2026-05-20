@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 410680249547098395}
   - component: {fileID: 8693723635918459240}
   - component: {fileID: 7025463685865692645}
+  - component: {fileID: -4338328176757790349}
   m_Layer: 0
   m_Name: Spruce
   m_TagString: Untagged
@@ -126,7 +127,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0000019073486, y: 1.2448883}
+  m_Offset: {x: -0.02127111, y: 0.34094673}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5000012, y: 0.1787385}
@@ -136,5 +137,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5625, y: 3.875}
+  m_Size: {x: 0.3147061, y: 0.8335024}
   m_EdgeRadius: 0
+--- !u!114 &-4338328176757790349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870598730560229270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0352a4d56abd42ad2fc69deb72448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifierVolume
+  m_Size: {x: 0.3487847, y: 0.8447194, z: 4}
+  m_Center: {x: -0.010634303, y: 0.34065425, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff

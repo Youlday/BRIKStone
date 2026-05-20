@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8974804741029741995}
   - component: {fileID: 2258773722747689068}
   - component: {fileID: 2810528407710213476}
+  - component: {fileID: -373316982153777104}
   m_Layer: 0
   m_Name: Maple
   m_TagString: Untagged
@@ -138,3 +139,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6464138, y: 0.7131294}
   m_EdgeRadius: 0
+--- !u!114 &-373316982153777104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040359753208011286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0352a4d56abd42ad2fc69deb72448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifierVolume
+  m_Size: {x: 0.6761608, y: 0.7271787, z: 4}
+  m_Center: {x: 0.016702652, y: 0.19889623, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
