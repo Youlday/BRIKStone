@@ -42,15 +42,21 @@ public class SlimeVisual : MonoBehaviour
     private void OnDestroy()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if (enemyEntity != null)
         {
             enemyEntity.OntakeHit -= _enemyEntity_OnTakeHit;
 =======
+=======
+>>>>>>> Stashed changes
         if (enemyAI != null) enemyAI.OnEnemyAttack -= _enemyAI_onEnemyAttack;
         if (enemyEntity != null)
         {
             enemyEntity.OntakeHit -= _enemyEntity_OnTakeHit;
             enemyEntity.OnDeath -= _enemyEntity_OnDeath;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         }
     }

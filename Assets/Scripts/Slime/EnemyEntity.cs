@@ -8,12 +8,18 @@ using UnityEngine;
 public class EnemyEntity : MonoBehaviour
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     
     public event EventHandler OntakeHit;
     public event EventHandler OnDeath;
     [Header("Здоровье сущности")] [SerializeField]
     private int maxHealth = 5;
+=======
+    [SerializeField] private EnemySO _enemySO;
+    public event EventHandler OntakeHit;
+    public event EventHandler OnDeath;
+>>>>>>> Stashed changes
 =======
     [SerializeField] private EnemySO _enemySO;
     public event EventHandler OntakeHit;
@@ -43,6 +49,11 @@ public class EnemyEntity : MonoBehaviour
     public void TakeDamage(int damage)
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        if (_currentHealth <= 0) return; 
+
+>>>>>>> Stashed changes
 =======
         if (_currentHealth <= 0) return; 
 
@@ -67,6 +78,7 @@ public class EnemyEntity : MonoBehaviour
         if (_currentHealth <= 0)
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             OnDeath?.Invoke(this, EventArgs.Empty);
         }
     }
@@ -79,6 +91,8 @@ public class EnemyEntity : MonoBehaviour
        // Debug.Log("Attack");
     }
 =======
+=======
+>>>>>>> Stashed changes
             _capsuleCollider.enabled = false;
             _polygonCollider.enabled = false;
             _enemyAI.SetDeathState();
@@ -94,5 +108,8 @@ public class EnemyEntity : MonoBehaviour
         }
     }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
