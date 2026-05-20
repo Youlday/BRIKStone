@@ -58,6 +58,9 @@ public class EnemyEntity : MonoBehaviour
             _polygonCollider.enabled = false;
             _enemyAI.SetDeathState();
             OnDeath?.Invoke(this, EventArgs.Empty);
+            
+            if (SlimeTracker.Instance != null)
+                SlimeTracker.Instance.RegisterSlimeDeath();
         }
     }
     

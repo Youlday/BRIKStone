@@ -202,7 +202,7 @@ public class Player : MonoBehaviour
         _rb.linearVelocity = _movement.normalized * currentSpeed;
     }
 
-    private void DisableMovement()
+    public void DisableMovement()
     {
         _rb.linearVelocity = Vector2.zero;
         _movement = Vector2.zero;
