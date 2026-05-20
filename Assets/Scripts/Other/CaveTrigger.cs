@@ -9,6 +9,10 @@ public class CaveTrigger : MonoBehaviour
     [SerializeField] private float fadeDuration = 1.5f;        
     [SerializeField] private float delayBeforeShow = 0.5f;     
 
+    [Header("Звук")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip winSound;
+
     private bool _triggered = false;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -16,7 +20,6 @@ public class CaveTrigger : MonoBehaviour
         if (_triggered) return;
         if (!other.TryGetComponent(out Player player)) return;
 
-        // Проверяем что все слаймы убиты
         if (SlimeTracker.Instance == null || !SlimeTracker.Instance.AllSlimesKilled)
         {
             Debug.Log("Ещё не все слаймы убиты!");
@@ -24,8 +27,24 @@ public class CaveTrigger : MonoBehaviour
         }
 
         _triggered = true;
+
+        if (audioSource != null && winSound != null)
+        {
+            audioSource.PlayOneShot(winSound);
+        }
+
+        KillEnemies();
         Player.Instance.DisableMovement();
         StartCoroutine(ShowEndScreen());
+    }
+
+    private void KillEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
     }
 
     private IEnumerator ShowEndScreen()

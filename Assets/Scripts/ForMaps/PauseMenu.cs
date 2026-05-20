@@ -4,19 +4,21 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [Header("Объекты интерфейса")]
-    [SerializeField] private GameObject pausePanel; // Ссылка на панель паузы
+    [SerializeField] private GameObject pausePanel; 
 
-    private bool isPaused = false; // Состояние игры
+    [Header("Звук")]
+    [SerializeField] private AudioSource backgroundMusic;
+    [SerializeField] private AudioClip resumeClickSound;
+
+    private bool isPaused = false; 
 
     void Start()
     {
-        // При старте уровня панель паузы гарантированно скрыта
         if (pausePanel != null) pausePanel.SetActive(false);
     }
 
     void Update()
     {
-        // Отслеживаем нажатие клавиши Esc (Escape)
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -30,26 +32,43 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    // Метод для снятия с паузы (Продолжить)
     public void Resume()
     {
-        if (pausePanel != null) pausePanel.SetActive(false); // Прячем панель
-        Time.timeScale = 1f;                                 // Запускаем время
+        if (resumeClickSound != null)
+        {
+            GameObject tempAudio = new GameObject("TempResumeAudio");
+            AudioSource tempSource = tempAudio.AddComponent<AudioSource>();
+            tempSource.clip = resumeClickSound;
+            tempSource.spatialBlend = 0f;
+            tempSource.Play();
+            Destroy(tempAudio, resumeClickSound.length);
+        }
+
+        if (pausePanel != null) pausePanel.SetActive(false); 
+        Time.timeScale = 1f;                                 
         isPaused = false;
+
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.UnPause();
+        }
     }
 
-    // Метод для включения паузы
     public void Pause()
     {
-        if (pausePanel != null) pausePanel.SetActive(true);  // Показываем панель
-        Time.timeScale = 0f;                                 // Замораживаем время (все застынут)
+        if (pausePanel != null) pausePanel.SetActive(true);  
+        Time.timeScale = 0f;                                 
         isPaused = true;
+
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.Pause();
+        }
     }
 
-    // Метод для выхода в главное меню
     public void QuitToMenu()
     {
-        Time.timeScale = 1f; // КРИТИЧНО: возвращаем время в норму, иначе главное меню тоже замрет!
-        SceneManager.LoadScene(0); // Загружаем сцену меню (индекс 0 в Build Settings)
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene(0); 
     }
 }

@@ -8,6 +8,13 @@ using UnityEngine;
 public class EnemyEntity : MonoBehaviour
 {
     [SerializeField] private EnemySO _enemySO;
+    
+    [Header("Звук смерти")]
+    [SerializeField] private AudioClip deathSound;
+    
+    [Tooltip("Усиление звука (сколько раз запустить одновременно)")]
+    [SerializeField] [Range(1, 5)] private int soundBoost = 1;
+
     public event EventHandler OntakeHit;
     public event EventHandler OnDeath;
 
@@ -30,7 +37,6 @@ public class EnemyEntity : MonoBehaviour
         _currentHealth = _enemySO.enemyHealth;
     }
 
-    // Получение урона 
     public void TakeDamage(int damage)
     {
         if (_currentHealth <= 0) return; 
@@ -54,6 +60,22 @@ public class EnemyEntity : MonoBehaviour
     {
         if (_currentHealth <= 0)
         {
+            if (deathSound != null)
+            {
+                GameObject tempAudio = new GameObject("TempDeathAudio");
+                AudioSource tempSource = tempAudio.AddComponent<AudioSource>();
+                
+                tempSource.spatialBlend = 0f;
+                tempSource.volume = 1f;
+                
+                for (int i = 0; i < soundBoost; i++)
+                {
+                    tempSource.PlayOneShot(deathSound);
+                }
+                
+                Destroy(tempAudio, deathSound.length);
+            }
+
             _capsuleCollider.enabled = false;
             _polygonCollider.enabled = false;
             _enemyAI.SetDeathState();
@@ -71,5 +93,4 @@ public class EnemyEntity : MonoBehaviour
             player.TakeDamage(transform, _enemySO.enemyDamageAmount);
         }
     }
-
 }
